@@ -1,8 +1,9 @@
 package com.haixiang.pipeline.service;
 
-import org.springframework.stereotype.Service;
+import com.haixiang.pipeline.model.User;
 
-@Service
-public interface UserSservice {
-    
+import java.util.List;
+
+public interface UserService {
+    List<User> find();
 }

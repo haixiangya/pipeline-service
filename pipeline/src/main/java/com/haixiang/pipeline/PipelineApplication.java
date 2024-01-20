@@ -1,0 +1,17 @@
+package com.haixiang.pipeline;
+
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+
+@SpringBootApplication
+@EnableEurekaClient
+@MapperScan(basePackages = "com.haixiang.pipeline.mapper")
+public class PipelineApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(PipelineApplication.class, args);
+    }
+
+}
