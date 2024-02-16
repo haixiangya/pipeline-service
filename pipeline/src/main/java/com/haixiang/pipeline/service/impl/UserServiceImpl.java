@@ -17,4 +17,9 @@ public class UserServiceImpl implements UserService {
     public List<User> find() {
         return userMapper.getUserList();
     }
+
+    @Override
+    public String anonymousInnerClasses() {
+        return null;
+    }
 }
