@@ -5,8 +5,6 @@ import com.haixiang.pipeline.model.Fruit;
 import com.haixiang.pipeline.model.FruitPriceTable;
 import com.haixiang.pipeline.model.PurchaseDetails;
 import com.haixiang.pipeline.service.FruitPriceTableService;
-import com.haixiang.pipeline.service.UserService;
-import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -40,7 +38,7 @@ public class SupermarketTest {
         }
         // 判断是否有满减活动
         if (!promotionalMethods.isEmpty() && promotionalMethods.equals("B")) {
-            if (amounts > 100) {
+            if (amounts >= 100) {
                 amounts = amounts - 10;
             }
         }
