@@ -9,4 +9,6 @@ public class PurchaseDetails {
     private List<Fruit> fruitsWeight;
 
     private String promotionalMethods;
+
+
 }

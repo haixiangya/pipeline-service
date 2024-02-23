@@ -30,8 +30,19 @@ public class SupermarketTest {
             Double fruitPrice = priceTableService.getOne(query).getFruitPrice();
             int fruitWeight = fruit.getFruitWeight();
             // 判断是否有草莓优惠活动
-            if (!promotionalMethods.isEmpty() && promotionalMethods.equals("A") && fruitType.equals("strawberry")) {
+            if (!promotionalMethods.isEmpty() && fruitType.equals("strawberry")) {
                 amounts = amounts + fruitPrice * fruitWeight * 0.8;
+                // 判断苹果优惠
+            } else if (!promotionalMethods.isEmpty() && fruitType.equals("apple")) {
+                if (fruitWeight > 3 && fruitWeight % 3 == 0) {
+                    amounts = amounts + fruitPrice * fruitWeight - fruitPrice * fruitWeight * 0.5;
+                } else if (fruitWeight > 3 && fruitWeight % 3 == 1) {
+                    amounts = amounts + fruitPrice * (fruitWeight-1) * 2 / 3 + fruitPrice;
+                }  else if (fruitWeight > 3 && fruitWeight % 3 == 2) {
+                    amounts = amounts + fruitPrice * (fruitWeight-2) * 2 / 3 + fruitPrice;
+                } else {
+                    amounts = amounts + fruitPrice * fruitWeight;
+                }
             } else {
                 amounts = amounts + fruitPrice * fruitWeight;
             }
